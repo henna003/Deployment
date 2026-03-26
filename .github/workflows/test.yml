@@ -9,20 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show initial directory
-        run: |
-          echo "INITIAL DIRECTORY:"
-          pwd
-          ls -R .
-
       - name: Checkout code
         uses: actions/checkout@v5
-
-      - name: Show directory after checkout
-        run: |
-          echo "AFTER CHECKOUT:"
-          pwd
-          ls -R .
 
       - name: Setup node
         uses: actions/setup-node@v4
@@ -31,14 +19,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: Deployment
 
       - name: Run tests with coverage
         run: npm run coverage
-        working-directory: Deployment
 
       - name: Send coverage to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: Deployment/coverage/lcov.info
+          path-to-lcov: coverage/lcov.info
