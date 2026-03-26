@@ -2,6 +2,8 @@ import upperFirst from './upperFirst.js'
 import words from './words.js'
 import toString from './toString.js'
 
+console.log("camelCase loaded");
+
 /**
  * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
  *

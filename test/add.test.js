@@ -1,6 +1,9 @@
 import { expect } from 'chai';
 import add from '../src/add.js';
 
+// const {expect } =require("chai");
+// const add = require("../src/add.js").default
+
 describe('add function', () => {
     it('adds two positive numbers', () => {
     expect(add(6, 4)).to.equal(10);

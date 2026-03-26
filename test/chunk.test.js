@@ -1,6 +1,9 @@
 import { expect } from 'chai';
 import chunk from '../src/chunk.js';
 
+// const {expect } =require("chai");
+// const add = require('../src/chunk.js').default
+
 describe('chunk', () => {
     it('splits array into equal chunks', () => {
         expect(chunk(['a', 'b', 'c', 'd'], 2)).to.deep.equal([['a', 'b'], ['c', 'd']]);

@@ -5,13 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-   "test": "mocha \"test/**/*.js\"",
-    "coverage": "nyc mocha \"test/**/*.js\"",
+    "test": "mocha",
+    "coverage": "c8 mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "c8": "^11.0.0",
     "chai": "^6.2.2",
     "coveralls": "^3.1.1",
     "install": "^0.13.0",
@@ -20,24 +21,24 @@
     "nyc": "^18.0.0",
     "proxyquire": "^2.1.3"
   },
-"nyc": {
+  "c8": {
     "all": true,
-    "extension": [".js"],
+    "extension": [
+      ".js"
+    ],
     "reporter": [
       "lcov",
       "text-summary"
     ],
-    "include":
-      [
-        "src/**/*.js"
-      ],
+    "include": [
+      "src/**/*.js"
+    ],
     "exclude": [
       "test/**",
       "src/.internal/**"
     ],
-    "experimentalModules": true,
-    "sourceMap": false,
-    "instrument": true
+    "instrument": true,
+    "sourceMap": true
   },
   "keywords": []
 }

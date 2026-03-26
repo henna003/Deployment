@@ -1,6 +1,13 @@
 import { expect } from 'chai';
 import camelCase from '../src/camelCase.js';
 
+
+// const {expect } =require("chai");
+// const add = require("../src/camelCase.js").default
+
+console.log("TEST RUNNING");
+console.log("camelCase:", camelCase("foo bar"));
+
 describe('camelCase', () => {
 
     it('converts simple words', () => {
